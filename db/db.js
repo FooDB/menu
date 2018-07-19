@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/menu');
 
-//Schema-Table
+//Schema-Table -- changes made
 let menuSchema = mongoose.Schema({
   foodMenu: [
     {
