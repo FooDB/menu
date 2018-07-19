@@ -12,19 +12,21 @@ let menuSchema = mongoose.Schema({
 	      title: String,
 	      description: String
 	  	},
-	  	menu: {
-	  	  info: {
-		    title: String,
-		    description: String
-		  },
-	    items: [
-	      {
-	        name: String,
-	        description: String,
-	        price: String
-	       }
-	     ]
-	    } 
+	  	menu: [
+		  {
+		  	info: {
+			    title: String,
+			    description: String
+			  },
+		    items: [
+		      {
+		        name: String,
+		        description: String,
+		        price: String
+		       }
+		     ]
+		   } 
+	    ]
 	}
   ]
   ,
