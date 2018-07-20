@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import styles from './Menu.css';
 
 class Menu extends Component {
 	constructor(props) {
@@ -19,7 +20,9 @@ class Menu extends Component {
 
 	render() {
 		return(
-		  <h1>Main Menu Component!</h1>
+		  <div className='page'>
+		    <h1>Menu</h1>
+		  </div>
 		)
 	}
 }
