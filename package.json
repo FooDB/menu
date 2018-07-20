@@ -11,9 +11,11 @@
   "scripts": {
     "build": "webpack -w",
     "start": "nodemon ./server/server.js",
-    "seed": "node ./db/db.js"
+    "seed": "node ./db/dataGenerator.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "jest": "^23.4.1",
     "mongodb": "^3.1.1",
     "mongoose": "^5.2.4",

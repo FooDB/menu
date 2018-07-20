@@ -732,6 +732,10 @@ const menu03 = {
  ]
 };
 
+data.push(menu01);
+data.push(menu02);
+data.push(menu03);
+
 module.exports = {
 	data
 }

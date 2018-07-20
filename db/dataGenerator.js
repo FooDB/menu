@@ -1,4 +1,5 @@
-const data = require('./mockData').data;
+const data = require('./mockData.js').data;
+const Menu = require('./db.js').Menu;
 const menus = [];
 
 for (let i = 0; i < 100; i++) {
@@ -6,6 +7,6 @@ for (let i = 0; i < 100; i++) {
   menus.push(data[rdm]);
 }
 
-module.exports = {
-	menus
-}
+Menu.insertMany(menus, () => {});
+
+
