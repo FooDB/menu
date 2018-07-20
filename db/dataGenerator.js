@@ -1,4 +1,4 @@
-const data = require('./exampleData').data;
+const data = require('./mockData').data;
 const menus = [];
 
 for (let i = 0; i < 100; i++) {
@@ -6,3 +6,6 @@ for (let i = 0; i < 100; i++) {
   menus.push(data[rdm]);
 }
 
+module.exports = {
+	menus
+}

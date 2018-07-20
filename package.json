@@ -10,7 +10,8 @@
   "main": "bundle.js",
   "scripts": {
     "build": "webpack -w",
-    "start": "nodemon ./server/server.js"
+    "start": "nodemon ./server/server.js",
+    "seed": "node ./db/db.js"
   },
   "dependencies": {
     "jest": "^23.4.1",

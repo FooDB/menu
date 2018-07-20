@@ -2,6 +2,8 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/menu');
 
+//Array of menus
+const menus = require('./dataGenerator.js').menus;
 //Schema-Table -- changes made
 let menuSchema = mongoose.Schema({
   resName: String,
@@ -53,3 +55,7 @@ let menuSchema = mongoose.Schema({
  ]
 
 });
+
+let Menu = mongoose.model('Menu', menuSchema);
+
+Menu.insertMany(menus, () => {});
