@@ -1,0 +1,24 @@
+.table {
+  background-color: #F5CF8E;
+}
+
+.section {
+  width: 100%;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .table {
+    width: 50%;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .table {
+    width: 50%;
+  }
+
+}

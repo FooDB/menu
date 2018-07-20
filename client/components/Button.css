@@ -1,0 +1,20 @@
+.btn {
+  color: #FF6347;
+  display: flex;
+  margin: 8px 8px;
+  padding: 12px 18px;
+  display: inline-block;
+  background: transparent;
+  border: 1px solid #FF6347;
+  border-radius: 2px;
+  text-align: center;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #FF6347;
+  color: white;
+ }
