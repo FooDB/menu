@@ -12,16 +12,16 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['react', 'env']
-        },
+        }
       },
       {
         test: /\.css/,
         loaders: ['style-loader', 'css-loader']
-      },
-    ],
+      }
+    ]
   },
   output: {
     path: __dirname + '/public',
-    filename: 'app.js',
+    filename: 'app.js'
   }
 };
