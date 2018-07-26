@@ -9,4 +9,6 @@ for (let i = 0; i < 100; i++) {
 
 Menu.insertMany(menus, () => {});
 
-
+module.exports = {
+  menus
+};
