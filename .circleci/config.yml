@@ -2,8 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image : circleci/node:8.11.3
+      # specify the version you desire here
+      - image: circleci/node:8.11.3-browsers
       steps:
         - checkout
         - run: npm install
         - run: npm test
+
+
