@@ -11,7 +11,8 @@
   "scripts": {
     "build": "webpack -w",
     "start": "nodemon ./server/server.js",
-    "seed": "node ./db/dataGenerator.js"
+    "seed": "node ./db/dataGenerator.js",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.18.0",
