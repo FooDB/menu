@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3003;
 const bodyParser = require('body-parser');
 
 const getAll = require('./routes.js').getAll;
@@ -19,4 +18,4 @@ app.get('/menus', (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Server listening on ${port}`));
+module.exports = app;
