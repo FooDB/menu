@@ -1,7 +1,6 @@
 * {
   margin: 0;
   paddin: 0;
-  box-sizing: border-box;
   font-family: 'Arial';
 }
 
@@ -18,8 +17,6 @@ h1 {
 
 @media only screen and (min-width: 961px) {
   .page {
-    /*width: 960px;
-*/ 
    width: 600px;
    margin: 0 auto;
   }

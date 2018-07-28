@@ -10,7 +10,7 @@
   "main": "bundle.js",
   "scripts": {
     "build": "webpack -w",
-    "start": "nodemon ./server/server.js",
+    "start": "nodemon ./server/app.js",
     "seed": "node ./db/dataGenerator.js",
     "test": "jest"
   },
