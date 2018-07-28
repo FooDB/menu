@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styles from './Menu.css';
 import MenuBar from './MenuBar.jsx';
-import Table from './Table.jsx';
+import MenuView from './MenuView.jsx';
 
 
 class Menu extends Component {
@@ -11,8 +11,10 @@ class Menu extends Component {
     super(props);
     this.state = {
       data: '',
-      loaded: false
+      loaded: false,
+      viewData: false
     }
+    this.getViewInfo = this.getViewInfo.bind(this);
   }
 
   componentDidMount () {
@@ -21,20 +23,26 @@ class Menu extends Component {
       .then((response) => {
         self.setState({
           data: response.data[5],
-          loaded: true
+          loaded: true,
+          viewData: response.data[5].foodMenu[0].menu
         }, () => {
           console.log(this.state.data);
         });
       });
   }
 
+  getViewInfo (index, name, type) {
+    this.setState({
+      viewData: this.state.data[type][index].menu
+    }, () => console.log('new data', this.state.viewData));
+  }
+
   render () {
     return (
         <div className="page">
           <h1> Menu </h1>
-          <MenuBar loaded={this.state.loaded} data={this.state.data} />
-          {this.state.loaded && <Table loaded={this.state.loaded} menu={this.state.data.foodMenu}/> }
-          {this.state.loaded && <Table loaded={this.state.loaded} menu={this.state.data.foodMenu}/> }
+          <MenuBar getViewInfo={this.getViewInfo} loaded={this.state.loaded} data={this.state.data} />
+          {this.state.loaded && <MenuView data={this.state.viewData} /> }
         </div>
     );
   }
