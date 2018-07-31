@@ -1,5 +1,11 @@
 .wrapper {
-  margin: 0 0 40px 0;
+  margin: 0 0 35px 0;
+  paddin: 0;
+  display: inline-block;
+}
+
+.topMenu {
+  margin: 0;
   paddin: 0;
   display: inline-block;
 }
