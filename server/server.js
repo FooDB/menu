@@ -3,16 +3,18 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-const getAll = require('./routes.js').getAll;
+const getData = require('./routes.js');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.use('/restaurant/:id/', express.static('public'));
+
 app.use(bodyParser.json());
 
-app.get('/menus', (req, res) => {
-  getAll((err, results) => {
+app.get('/api/restaurant/:id', (req, res) => {
+  getData(req.params.id, (err, results) => {
     if (err) {
-      console.log('Error on calling getAll', err);
+      throw err;
     }
     res.send(JSON.stringify(results));
   });

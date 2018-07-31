@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './Menu.css';
-import MenuBar from './MenuBar.jsx';
-import MenuView from './MenuView.jsx';
+import MenuBar from './MenuBar';
+import MenuView from './MenuView';
 
 class Menu extends Component {
   constructor (props) {
@@ -17,13 +17,15 @@ class Menu extends Component {
   }
 
   componentDidMount () {
+    let path = window.location.pathname;
+    path = path.split('/')[2];
     const self = this;
-    axios.get('/menus')
+    axios.get(`/api/restaurant/${path}`)
       .then((response) => {
         self.setState({
-          data: response.data[5],
+          data: response.data,
           loaded: true,
-          viewData: response.data[5].foodMenu[0].menu
+          viewData: response.data.foodMenu[0].menu
         });
       });
   }
