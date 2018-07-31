@@ -1,10 +1,19 @@
 import React from 'react';
-import styles from './Button.css';
+import './Button.css';
 
-const Button = ({ type, index, name, getViewInfo }) => (
+const Button = (props) => {
+  const {
+    type,
+    index,
+    name,
+    getViewInfo
+  } = props;
 
-  <button onClick={() => getViewInfo(index, name, type)} className='btnMenu'>{name}</button>
-
-);
+  return (
+    <button type="button" onClick={() => getViewInfo(index, name, type)} className="btnMenu">
+      {name}
+    </button>
+  );
+};
 
 export default Button;
