@@ -32,6 +32,7 @@ class Menu extends Component {
   }
 
   getViewInfo (index, name, type) {
+    console.log('you clicked me')
     this.setState({
       viewData: this.state.data[type][index].menu
     }, () => console.log('new data', this.state.viewData));

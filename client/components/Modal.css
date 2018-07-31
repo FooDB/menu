@@ -1,4 +1,26 @@
-.btnMenu {
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 20%;
+  background: transparent;
+}
+
+.modal-main {
+  position: fixed;
+  background: transparent;
+  width: auto;
+  height: auto;
+}
+
+.centered {
+  position: fixed;
+  top: 55%;
+  left: 42.5%;
+}
+
+.btnExpand {
   color: #FF6347;
   display: flex;
   margin: 8px 8px;
@@ -14,7 +36,7 @@
   text-transform: uppercase;
 }
 
-.btnMenu:hover {
+.btnExpand:hover {
   background-color: #FF6347;
   color: white;
  }
