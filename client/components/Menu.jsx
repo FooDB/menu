@@ -29,19 +29,21 @@ class Menu extends Component {
   }
 
   getViewInfo (index, name, type) {
+    const { data } = this.state;
     this.setState({
-      viewData: this.state.data[type][index].menu
+      viewData: data[type][index].menu
     });
   }
 
   render () {
+    const { loaded, data, viewData } = this.state;
     return (
       <div className="page">
         <h1>
           Menu
         </h1>
-        <MenuBar getViewInfo={this.getViewInfo} loaded={this.state.loaded} data={this.state.data} />
-        {this.state.loaded && <MenuView data={this.state.viewData} /> }
+        <MenuBar getViewInfo={this.getViewInfo} loaded={loaded} data={data} />
+        {loaded && <MenuView data={viewData} /> }
       </div>
     );
   }
