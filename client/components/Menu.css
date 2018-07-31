@@ -1,7 +1,7 @@
 * {
   margin: 0;
   paddin: 0;
-  font-family: 'Arial';
+  font-family: 'Lato';
 }
 
 .page {
@@ -12,7 +12,6 @@
 
 h1 {
   font-size: 24px;
-  font-family: 'Arial';
 }
 
 @media only screen and (min-width: 961px) {

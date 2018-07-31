@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './MenuView.css';
-import Table from './Table.jsx';
-import Modal from './Modal.jsx';
+import Table from './Table';
+import Modal from './Modal';
 
 class MenuView extends Component {
   constructor (props) {
@@ -15,10 +15,12 @@ class MenuView extends Component {
   }
 
   getMore () {
-    if (this.state.expanded) {
+    const { expanded } = this.state;
+    const { data } = this.props;
+    if (expanded) {
       return (
-        <div className={`hide-${this.state.expanded}`}>
-          {this.props.data && this.props.data.map((menu, i) => {
+        <div className={`hide-${expanded}`}>
+          {data && data.map((menu, i) => {
             if (i === 0) {
               return (
                 <div className="wrapper">
@@ -63,34 +65,38 @@ class MenuView extends Component {
   }
 
   expanded () {
+    const { expanded, show } = this.state;
     this.setState({
-      expanded: !this.state.expanded,
-      show: !this.state.show
+      expanded: !expanded,
+      show: !show
     });
   }
 
   render () {
+    const { expanded, show } = this.state;
+    const { data } = this.props;
+    console.log('MewView Data', data);
     return (
       <div>
         <div>
-          {this.props.data && (
+          {data && (
             <div className="topMenu">
-              {this.props.data[0].info && (
+              {data[0].info && (
                 <div>
-                  <h5>{this.props.data[0].info.title}</h5>
-                  <p>{this.props.data[0].info.description}</p>
+                  <h5>{data[0].info.title}</h5>
+                  <p>{data[0].info.description}</p>
                 </div>)}
-              {this.props.data[0].title && <h5>{this.props.data[0].title}</h5>}
+              {data[0].title && <h5>{data[0].title}</h5>}
               <br />
-              <Table info={this.props.data[0].info} data={this.props.data[0].items.slice(0, 2)} />
-              <Table data={this.props.data[0].items.slice(2, 4)} />
+              <Table info={data[0].info} data={data[0].items.slice(0, 2)} />
+              <Table data={data[0].items.slice(2, 4)} />
             </div>)}
         </div>
         <div>
-          {this.state.expanded && this.getMore()}
+          {expanded && this.getMore()}
         </div>
         <div>
-          <Modal menuText={this.state.show} handleClose={this.expanded} />
+          <Modal menuText={show} handleClose={this.expanded} />
         </div>
       </div>
     );
