@@ -4,6 +4,7 @@ mongoose.connect('mongodb://localhost/menu');
 
 //Schema-Table -- changes made
 let menuSchema = mongoose.Schema({
+  id: Number,
   resName: String,
   foodMenu: [
     {
