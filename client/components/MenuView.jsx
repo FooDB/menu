@@ -23,7 +23,7 @@ class MenuView extends Component {
           {data && data.map((menu, i) => {
             if (i === 0) {
               return (
-                <div className="wrapper">
+                <div key={i} className="wrapper">
                   {menu.items.length % 2 === 0 && (
                     <div>
                       <Table data={menu.items.slice(4, 4 + (Math.floor(menu.items.length / 4)))} />
