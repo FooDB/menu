@@ -26,7 +26,7 @@ class Menu extends Component {
           data: response.data,
           loaded: true,
           viewData: response.data.foodMenu[0].menu
-        }, () => console.log('HEY THERE'));
+        });
       });
   }
 

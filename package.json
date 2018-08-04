@@ -9,10 +9,10 @@
   },
   "main": "bundle.js",
   "scripts": {
-    "build": "webpack -w -d",
-    "start": "nodemon ./server/app.js",
-    "seed": "node ./db/dataGenerator.js",
-    "test": "jest"
+    "init-assets": "webpack",
+    "init-server": "node ./server/app.js",
+    "init-data": "node ./db/dataGenerator.js",
+    "start": "npm run init-data && npm run init-server"
   },
   "dependencies": {
     "axios": "^0.18.0",
