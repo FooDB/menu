@@ -1,7 +1,8 @@
+console.log('Data generator starts')
 const data = require('./mockData.js').data;
+const mongoose = require('./db.js').mongoose;
 const Menu = require('./db.js').Menu;
 const menus = [];
-let num = 0;
 
 for (let i = 0; i < 100; i++) {
   let rdm = Math.floor(Math.random() * 3);
@@ -10,10 +11,8 @@ for (let i = 0; i < 100; i++) {
   menus.push(cloneObj);
 }
 
-Menu.insertMany(menus, () => {});
+Menu.insertMany(menus, () => mongoose.connection.close());
 
 module.exports = {
   menus
 };
-
-console.log(menus[0].id);
