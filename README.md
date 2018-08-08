@@ -17,7 +17,11 @@
 ## Development Setup
 1. Navigate to root directory
 2. Run npm install
-  `code(npm install)`
+  `npm install`
 3. Seed the database
-  `code(npm run seed)`
+  `npm run seed`
+4. Create webpack bundle
+  `npm run init-assets`
+5. Run server on port 3003
+  `npm run init-server`
 
