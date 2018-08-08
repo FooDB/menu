@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 // 1st party imports 
-const getData = require('./model.js');
+const model = require('./model.js');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 // Read
 app.get('/api/restaurant/:id', (req, res) => {
   if (!isNaN(Number(req.params.id))) {
-    getData(req.params.id, (err, results) => {
+    model.getData(req.params.id, (err, results) => {
       if (err) {
         console.log(err);
       }
@@ -33,20 +33,23 @@ app.get('/api/restaurant/:id', (req, res) => {
 });
 
 // Create
-app.post('/api/restaurant/:id', (req, res) => {
-  if (!isNaN(Number(req.params.id))) {
-    getData(req.params.id, (err, results) => {
-      if (err) {
-        console.log(err);
-      }
-      res.send(JSON.stringify(results));
-    });
-  }
+app.post('/create/restaurant', (req, res) => {
+  model.insertData(req.body);
+  res.send('completed insert');
 });
 
 // Update
+app.put('/update/restaurant', (req, res) => {
+  console.log('body: ', req.body);
+  model.updateData(req.body);
+  res.send('completed update')
+});
 
 // Delete
+app.delete('/delete/restaurant/:id', (req, res) => {
+  model.deleteData(req.params.id)
+  res.send('deleted item');
+});
 
 const port = 3003;
 app.listen(port, () => console.log(`Server listening on ${port}`));
