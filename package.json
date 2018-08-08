@@ -10,7 +10,7 @@
   "main": "bundle.js",
   "scripts": {
     "init-assets": "webpack",
-    "init-server": "node ./server/app.js",
+    "init-server": "node ./server/index.js",
     "init-data": "node ./db/dataGenerator.js",
     "start": "npm run init-data && npm run init-server"
   },

@@ -1,9 +1,11 @@
+// 3rd party imports
 const express = require('express');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-const getData = require('./routes.js');
+// 1st party imports 
+const getData = require('./model.js');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -46,4 +48,7 @@ app.post('/api/restaurant/:id', (req, res) => {
 
 // Delete
 
-module.exports = app;
+const port = 3003;
+app.listen(port, () => console.log(`Server listening on ${port}`));
+
+// module.exports = app;
