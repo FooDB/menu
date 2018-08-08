@@ -1,4 +1,4 @@
-# Project Name
+# FooDB
 
 > Menu component for restaurant reservation website
 
