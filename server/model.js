@@ -13,7 +13,12 @@ const insertData = (body) => {
   }).then((data) => {
     body.id = data.id + 1;
     console.log('body: ', body);
-    Menu.insertMany(body, () => mongoose.connection.close());
+    Menu.insertMany(body).then(() => {
+      console.log('successful insert');
+      mongoose.connection.close()
+    }).catch(() => {
+      console.log('insert failed');
+    });
     console.log('inserted into database');
   }).catch(() => {
     console.log('insert error');
@@ -21,8 +26,15 @@ const insertData = (body) => {
 };
 
 const updateData = (body) => {
-  deleteData(body.id);
-  Menu.insertMany(body, () => mongoose.connection.close());
+  console.log('id: ', body.id);
+  Menu.update({id: body.id}, { $set: body }).then(() => {
+    console.log('succesful update');
+    mongoose.connection.close()
+  }).catch(() => {
+    console.log('error updating');
+  })
+  // deleteData(body.id);
+  // Menu.insertMany(body, () => mongoose.connection.close());
 };
 
 const deleteData = (id) => {
