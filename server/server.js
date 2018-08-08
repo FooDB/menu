@@ -7,7 +7,7 @@ const getData = require('./routes.js');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/restaurant/:id/', express.static('../public'));
+app.use('/restaurant/:id/', express.static(path.join(__dirname, '../public')));
 
 app.use(bodyParser.json());
 
@@ -18,6 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// Read
 app.get('/api/restaurant/:id', (req, res) => {
   if (!isNaN(Number(req.params.id))) {
     getData(req.params.id, (err, results) => {
@@ -28,5 +29,21 @@ app.get('/api/restaurant/:id', (req, res) => {
     });
   }
 });
+
+// Create
+app.post('/api/restaurant/:id', (req, res) => {
+  if (!isNaN(Number(req.params.id))) {
+    getData(req.params.id, (err, results) => {
+      if (err) {
+        console.log(err);
+      }
+      res.send(JSON.stringify(results));
+    });
+  }
+});
+
+// Update
+
+// Delete
 
 module.exports = app;
