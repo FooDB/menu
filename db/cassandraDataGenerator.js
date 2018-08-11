@@ -6,7 +6,7 @@ const faker = require('faker');
 const numMenus = 100000;
 
 // this function is used to generate random numbers
-const generateRandomNumber = function (lowerLimit, upperLimit) {
+const generateRandomNumber = (lowerLimit, upperLimit) => {
   return lowerLimit + Math.floor(upperLimit * Math.random());
 };
 

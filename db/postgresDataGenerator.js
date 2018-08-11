@@ -12,7 +12,7 @@ let numSubs4 = 15998380;
 let numSubs5 = 19997975;
 
 // this function is used to generate random numbers
-const generateRandomNumber = function (lowerLimit, upperLimit) {
+const generateRandomNumber = (lowerLimit, upperLimit) => {
   return lowerLimit + Math.floor(upperLimit * Math.random());
 };
 
