@@ -6,5 +6,16 @@ CREATE TABLE menus (id INT PRIMARY KEY, name TEXT, submenus map<text, frozen<lis
 
 -- Insert data
 copy menus FROM '/Users/david/hackreactor/menu/db/csv/cass-menus.csv' WITH DELIMITER=';';
+  
+-- Change compaction strategy to optimize for reads instead of writes
+ALTER TABLE menus WITH
+  compaction = { 'class' :  'LeveledCompactionStrategy'  };
+
+-- Create materialized view
+CREATE MATERIALIZED VIEW query_by_name
+AS SELECT name, submenus 
+FROM menus
+WHERE name IS NOT NULL AND id IS NOT NULL 
+PRIMARY KEY (name, id);
 
 -- cqlsh -u cassandra -p cassandra -f './db/cassandraSchema.cql' 127.0.0.1

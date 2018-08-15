@@ -26,5 +26,10 @@ COPY items(id, name, description, price, subid) FROM '/Users/david/hackreactor/m
 ALTER TABLE items ADD PRIMARY KEY (id);
 ALTER TABLE items ADD FOREIGN KEY (subid) REFERENCES submenus (id);
 
+-- Add indices to dramatically increase speed of joins
+CREATE INDEX res_id on submenus (resid);
+CREATE INDEX sub_id on items (subid);
+
 -- createdb david
 -- psql david < ./db/postgresSchema.sql
+-- \di to see indices
