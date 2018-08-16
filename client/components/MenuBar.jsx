@@ -8,14 +8,13 @@ const MenuBar = (props) => {
     data,
     getViewInfo
   } = props;
-
   return (
     <div className="menu">
       <hr />
       {loaded &&
-        data.foodMenu.map((menu, i) => <Button key={i} type={'foodMenu'} index={i} name={menu.name} getViewInfo={getViewInfo} />)}
-      {loaded &&
-        data.drinksMenus.map((menu, i) => <Button key={i} type={'drinksMenus'} index={i} name={menu.name} getViewInfo={getViewInfo} />)}
+        Object.keys(data).map((menu, i) => <Button key={i} type={'foodMenu'} index={i} name={menu} getViewInfo={getViewInfo} />)}
+      {/* {loaded &&
+        data.drinksMenus.map((menu, i) => <Button key={i} type={'drinksMenus'} index={i} name={menu.name} getViewInfo={getViewInfo} />)} */}
       <hr />
     </div>
   );

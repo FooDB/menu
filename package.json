@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "menu",
   "version": "",
   "description": "",
   "author": "",
@@ -9,20 +9,22 @@
   },
   "main": "bundle.js",
   "scripts": {
-    "init-assets": "webpack",
-    "init-server": "node ./server/index.js",
+    "init-assets": "webpack --w",
+    "init-server": "nodemon ./server/index.js",
     "init-data": "node ./db/dataGenerator.js",
-    "start": "npm run init-data && npm run init-server"
+    "start": "npm run init-assets && npm run init-server"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cassandra-driver": "^3.5.0",
     "css-loader": "^1.0.0",
     "eslint": "^5.3.0",
     "faker": "^4.1.0",
     "jest": "^23.4.1",
     "mongodb": "^3.1.1",
     "mongoose": "^5.2.4",
+    "newrelic": "^4.8.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-jss": "^8.6.1",

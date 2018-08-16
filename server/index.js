@@ -1,4 +1,5 @@
 // 3rd party imports
+const nr = require('newrelic');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -27,7 +28,8 @@ app.get('/api/restaurant/:id', (req, res) => {
       if (err) {
         console.log(err);
       }
-      res.send(JSON.stringify(results));
+      // console.log('Cass data on server: ', results.submenus);
+      res.send(results.submenus);
     });
   }
 });

@@ -11,13 +11,13 @@ const Table = (props) => {
       {data.map(plate => (
         <div>
           <div className="title name">
-            {plate.name}
+            {plate[0]}
           </div>
           <div className="title price">
-            {plate.price}
+            {plate[2]}
           </div>
           <p className="description">
-            {plate.description}
+            {plate[1]}
           </p>
         </div>))}
     </div>
