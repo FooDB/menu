@@ -23,10 +23,12 @@ class Menu extends Component {
     console.log('this is path: ', path);
     axios.get(`/api/restaurant/${path}`)
       .then((response) => {
+        console.log('Client response: ', response.data);
+        const menuNames = Object.keys(response.data)
         self.setState({
           data: response.data,
           loaded: true,
-          viewData: response.data.foodMenu[0].menu
+          viewData: response.data[menuNames[0]],
         });
       });
   }
@@ -34,7 +36,7 @@ class Menu extends Component {
   getViewInfo (index, name, type) {
     const { data } = this.state;
     this.setState({
-      viewData: data[type][index].menu
+      viewData: data[Object.keys(data)[index]]
     });
   }
 

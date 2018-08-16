@@ -3,7 +3,7 @@ const fs = require('fs');
 const faker = require('faker');
 
 // set number of rows
-const numMenus = 100000;
+const numMenus = 10000000;
 
 // this function is used to generate random numbers
 const generateRandomNumber = (lowerLimit, upperLimit) => {
@@ -44,6 +44,6 @@ const createMenus = () => {
   });
 }
 
-// this is the code to create the csv: time node --max-old-space-size=8000 dataGenerator.js > cass-menus.txt
+// this is the code to create the csv: time node --max-old-space-size=8000 cassandraDataGenerator.js > cass-menus1.csv
 
 createMenus();

@@ -75,21 +75,20 @@ class MenuView extends Component {
   render () {
     const { expanded, show } = this.state;
     const { data } = this.props;
-    console.log('MewView Data', data);
     return (
       <div>
         <div>
           {data && (
             <div className="topMenu">
-              {data[0].info && (
+              {/* {data[0].info && (
                 <div>
                   <h5>{data[0].info.title}</h5>
                   <p>{data[0].info.description}</p>
                 </div>)}
               {data[0].title && <h5>{data[0].title}</h5>}
-              <br />
-              <Table info={data[0].info} data={data[0].items.slice(0, 2)} />
-              <Table data={data[0].items.slice(2, 4)} />
+              <br /> */}
+              <Table data={data.slice(0, 2)} />
+              <Table data={data.slice(2, 4)} />
             </div>)}
         </div>
         <div>
