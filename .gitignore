@@ -29,3 +29,6 @@ dist/
 
 # Siege
 /siege-4.0.4
+
+# AWS
+*.pem
