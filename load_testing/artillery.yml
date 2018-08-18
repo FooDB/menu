@@ -1,0 +1,17 @@
+config:
+  target: "http://localhost:3003"
+  phases:
+    - duration: 120
+      arrivalRate: 1000 
+      # rampTo: 5000
+  # defaults:
+  #   headers:
+  #     x-my-service-auth: '987401838271002188298567'
+  # processor: "./load-functions.js"
+scenarios:
+  - flow:
+    - loop:
+    # - function: 'generateURL'
+      - get:
+          url: '/api/restaurant/{{ $randomNumber(9000000, 10000000) }}'
+      count: 50

@@ -23,7 +23,7 @@ class Menu extends Component {
     console.log('this is path: ', path);
     axios.get(`/api/restaurant/${path}`)
       .then((response) => {
-        console.log('Client response: ', response.data);
+        // console.log('Client response: ', response.data);
         const menuNames = Object.keys(response.data)
         self.setState({
           data: response.data,
