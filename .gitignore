@@ -26,3 +26,6 @@ dist/
 
 # Ignore csv files
 *.csv
+
+# Siege
+/siege-4.0.4
