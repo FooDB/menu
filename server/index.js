@@ -48,7 +48,7 @@ const model = require('./model.js');
   // });
   
   // Read
-  let redisCount = 0;
+  // let redisCount = 0;
   // let cassCount = 0;
   app.get('/api/restaurant/:id', (req, res) => {
     const searchId = req.params.id;
