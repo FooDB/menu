@@ -32,3 +32,7 @@ dist/
 
 # AWS
 *.pem
+
+# New Relic
+newrelic.js
+newrelic_agent.log
