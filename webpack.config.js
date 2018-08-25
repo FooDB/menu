@@ -4,21 +4,28 @@ const path = require('path');
 const common = {
   context: __dirname + '/client',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'env']
-        },
+          presets: ['react', 'env']
+        }
       },
-    ],
-  }
+      {
+        test: /\.css/,
+        loaders: ['style-loader', 'css-loader']
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.jsx', '.js']
+  },
 };
 
 const client = {
-  entry: './client/client.js',
+  entry: './client.js',
   output: {
     path: __dirname + '/public',
     filename: 'bundle.js'
@@ -26,7 +33,7 @@ const client = {
 };
 
 const server = {
-  entry: './client/server.js',
+  entry: './server.js',
   target: 'node',
   output: {
     path: __dirname + '/public',

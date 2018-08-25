@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './MenuView.css';
+// import './MenuView.css';
 import Table from './Table';
 import Modal from './Modal';
 

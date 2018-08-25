@@ -1,5 +1,5 @@
 // 3rd party imports
-const nr = require('newrelic');
+// const nr = require('newrelic');
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
@@ -40,12 +40,12 @@ const model = require('./model.js');
   
   // app.use(bodyParser.json());
   
-  // app.use((req, res, next) => {
-  //   res.header('Access-Control-Allow-Origin', '*');
-  //   res.header('Access-Control-Allow-Headers', '*');
-  //   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET');
-  //   next();
-  // });
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET');
+    next();
+  });
   
   // Read
   // let redisCount = 0;

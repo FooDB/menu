@@ -1,5 +1,5 @@
 import React from 'react';
-import './MenuBar.css';
+// import './MenuBar.css';
 import Button from './Button';
 
 const MenuBar = (props) => {
